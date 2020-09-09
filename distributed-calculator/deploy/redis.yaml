@@ -8,4 +8,8 @@ spec:
   - name: redisHost
     value: redis-master:6379
   - name: redisPassword
-    value: eQ0dUXoGQk
+    secretKeyRef:
+    	name: redis
+        key:  redis-password
+auth:
+  secretStore: kubernetes
